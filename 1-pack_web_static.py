@@ -19,7 +19,7 @@ def do_pack():
     archive = 'web_static_' + time.strftime("%Y%m%d%H%M%S") + '.' + 'tgz'
     local('mkdir -p versions')
     create = local('tar -cvzf versions/{} web_static'.format(archive))
-    if create != "None":
+    if create is not None:
         return archive
     else:
-        return "None"
+        return None
